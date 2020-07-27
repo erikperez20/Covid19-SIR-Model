@@ -30,8 +30,6 @@ def make_dir(data_dir):
         os.makedirs(data_dir)
 
 
-# Idea es encontrar parámetros 
-
 class SIR_Model:
 
 	def __init__(self, Susceptibles , Infected  , Recovered , a_parameter , b_parameter , country , integration_time , dtStep = 0.01):
