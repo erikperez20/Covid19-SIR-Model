@@ -1,0 +1,3 @@
+Compartmental models aims to model the evolution of infectious diseases separating the population in compartments, sections of the population with certain characteristics.
+SIR is the simplest compartmental model that asigns the population in three categories: S(Susceptibles), I(Infectious) and R(Recovered). This proyects tries to determine
+the R-0 parameter for some countries whose infectious evolution fits the SIR model.
