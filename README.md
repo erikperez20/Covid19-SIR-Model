@@ -12,19 +12,19 @@ python SIR_model.py
 Options:
 ```python
 usage: Visualize your data statistics comparing multiple configurations
-       [-h] [-C COUNTRY] [-S SUSCEPTIBLES] [-I INFECTED] [-R RECOVERED]
+       [-h] [-c COUNTRY] [-s SUSCEPTIBLES] [-i INFECTED] [-r RECOVERED]
        [-a A_ESTIMATE] [-b B_ESTIMATE] [--days DAYS]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -C COUNTRY, --country COUNTRY
+  -c COUNTRY, --country COUNTRY
                         Country to analize
-  -S SUSCEPTIBLES, --Susceptibles SUSCEPTIBLES
+  -s SUSCEPTIBLES, --susceptibles SUSCEPTIBLES
                         Number of susceptible people to get infected. Depends
                         on each country's population size
-  -I INFECTED, --Infected INFECTED
+  -i INFECTED, --infected INFECTED
                         Number of infected of day 1
-  -R RECOVERED, --Recovered RECOVERED
+  -r RECOVERED, --recovered RECOVERED
                         Number of recovered people on day 1 (defaults to 0)
   -a A_ESTIMATE, --a_estimate A_ESTIMATE
                         "a" parameter first estimation
