@@ -35,4 +35,7 @@ optional arguments:
   --days DAYS           Number of days to see the infected evolution
 ```
 
+# Data Source
+
+https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases
 
