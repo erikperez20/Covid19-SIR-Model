@@ -1,8 +1,10 @@
 # Covid-19 R-0 parameter estimation using the SIR model
 
-Compartmental models aims to model the evolution of infectious diseases separating the population in compartments, sections of the population with certain characteristics.
-SIR is the simplest compartmental model that asigns the population in three categories: S(Susceptibles), I(Infectious) and R(Recovered). This proyects tries to determine
-the R-0 parameter for some countries whose infectious evolution fits the SIR model.
+Compartmental models aim to model the evolution of infectious diseases by 
+separating the population into compartments, sections of the population with 
+certain characteristics. SIR is the simplest compartmental model that separates 
+the population into three categories: S (Susceptible), I (Infectious) and R (Recovered). 
+This project tries to determine the R-0 parameter for some countries whose infectious evolution fits best to the SIR model.
 
 ![italy](</Results/Italy.png>)
 
@@ -41,7 +43,7 @@ optional arguments:
 # How to Use 
 
 Model can be tested for Italy, Spain, Germany, India, Netherlands and United Kingdom. 
-The first step is to determine the estimation parameters 'a' and 'b'and the initial 
+The first step is to determine the estimation parameters 'a' and 'b' and the initial 
 susceptible population (S), these can be established randomly but the model may not 
 converge or remain at some local minimum when trying to find the optimal parameters 'a' and 'b'. 
 One option is to use the SIR_model.nb notebook and manipulate the graph on it until 
