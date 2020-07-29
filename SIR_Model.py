@@ -151,12 +151,12 @@ if __name__ == '__main__':
 	args = parse_args()
 	Country = args.country
 
-	Susceptibles = args.susceptibles
-	Infected = args.infected
-	Recovered = args.recovered
+	susceptibles = args.susceptibles
+	infected = args.infected
+	recovered = args.recovered
 	a_estimate = args.a_estimate
 	b_estimate = args.b_estimate
 	days_to_plot = args.days
 
-	Model = SIR_Model(Susceptibles,Infected,Recovered,a_estimate,b_estimate, Country, days_to_plot ,0.01)
+	Model = SIR_Model(susceptibles,infected,recovered,a_estimate,b_estimate, Country, days_to_plot ,0.01)
 	Model.run()
