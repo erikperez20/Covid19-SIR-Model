@@ -53,9 +53,9 @@ and it's defined as R-0 = a*N/b where N is the total sample population.
 
 # Some results
 
-Italy: N = 15000, a = 1.6264e-05, b = 0.0630, R-0 = 3.8725
+Italy: N = 15000, a = 1.5993e-05, b = 0.0626, R-0 = 3.8337
 
-Spain: N = 20000, a = 1.2789e-05, b = 0.0733, R-0 = 3.4895
+Spain: N = 20000, a = 1.2598e-05, b = 0.0729, R-0 = 3.4582
 
 # Data Source
 
