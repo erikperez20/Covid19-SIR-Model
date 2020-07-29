@@ -53,12 +53,14 @@ class SIR_Model:
 	def get_data(self ,  country_name):
 		df = pd.read_csv('time_series_covid19_confirmed_global.csv')
 		countryDF = df[df['Country/Region'] == country_name] 
-		country_df = countryDF.iloc[0].loc[Country_Start_Day[country_name]:]
+		index = list(countryDF['Province/State'].values).index(np.nan)
+		country_df = countryDF.iloc[index].loc[Country_Start_Day[country_name]:]
 		cases = country_df.values.tolist()
 		cases.insert(0, 0)
 		cases = np.array(cases)
 		daily_cases = cases[1:] - cases[:-1]
-		days = list(range(len(daily_cases)))
+		daily_cases = [item for item in daily_cases if item >= 0]
+		days = list(range(1,len(daily_cases)+1))
 		self.contagion_days=len(days)
 		return days, daily_cases
 
@@ -113,6 +115,8 @@ class SIR_Model:
 		a_param = opt[0]
 		b_param = opt[1]
 
+
+
 		didt,dsdt,drdt = self.SIR_system(a_param,b_param)
 
 		t0 = 0
@@ -124,13 +128,20 @@ class SIR_Model:
 
 		tRK,SusRK,InfRK,RecRK = RK.runge_kutta_4th_order_3_coupled(t0,tmax,dt,vec0,didt,dsdt,drdt)
 
+
+		print(self.country)
+		print('a: ',a_param)
+		print('b: ',b_param)
+		print('R-0: ',a_param*N/b_param)
+
 		self.Plot_Results(days_data,daily_cases_data,tRK,InfRK,"Days","Infected",a_param,b_param)
 
 
 if __name__ == '__main__':
 
 	# Countries with best fitting model
-	Country_Start_Day = {'Italy':'1/31/20','Germany':'1/27/20','India':'1/30/20','Spain':'1/31/20'}
+
+	Country_Start_Day = {'Italy':'1/31/20','Germany':'1/27/20','India':'1/30/20','Spain':'1/31/20','United Kingdom':'2/28/20','Netherlands':'2/27/20'}
 
 	# Save Images:
 	path = os.path.join(os.path.dirname(__file__), 'Results' )
@@ -139,6 +150,7 @@ if __name__ == '__main__':
 	# Intro Parameters to the Model
 	args = parse_args()
 	Country = args.country
+
 	Susceptibles = args.susceptibles
 	Infected = args.infected
 	Recovered = args.recovered
